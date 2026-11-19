@@ -1,0 +1,49 @@
+:root {
+  color-scheme: light dark;
+  --background: #faf9f7;
+  --surface: #fff;
+  --hero: #f0ebfc;
+  --text: #33313a;
+  --muted: #5e586c;
+  --link: #573ba5;
+  --border: #e3dced;
+  font: 100% / 1.65 system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #181620;
+    --surface: #211e2a;
+    --hero: #2b2340;
+    --text: #eceaf1;
+    --muted: #c6bfd2;
+    --link: #cfbcff;
+    --border: #433854;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--text); }
+a { color: var(--link); text-underline-offset: .17em; overflow-wrap: anywhere; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.wrap { width: min(68rem, calc(100% - 2rem)); margin-inline: auto; }
+.bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.bar-content { min-height: 4.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .75rem; font-size: 1.25rem; font-weight: 750; }
+.brand img { border-radius: .7rem; }
+.language { border: 1px solid var(--border); padding: .4rem .85rem; border-radius: 2rem; font-weight: 650; }
+.hero { margin-block: clamp(1.5rem, 5vw, 3.5rem) 2rem; padding: clamp(1.25rem, 5vw, 3.5rem); background: var(--hero); border: 1px solid var(--border); border-radius: 1.75rem; }
+h1 { margin: 0; font-size: clamp(2rem, 5.5vw, 3.8rem); line-height: 1.08; letter-spacing: -.045em; text-wrap: balance; }
+.hero p { max-width: 65ch; margin-bottom: 0; }
+.date, footer { color: var(--muted); font-size: .875rem; }
+.layout { display: grid; grid-template-columns: minmax(0, 15.5rem) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+nav, article { background: var(--surface); border: 1px solid var(--border); border-radius: 1.25rem; padding: clamp(1rem, 3.3vw, 2rem); }
+nav h2 { font-size: 1rem; }
+nav ol { padding-inline-start: 1.35rem; margin-bottom: 0; }
+nav li + li { margin-top: .35rem; }
+h2 { font-size: 1.2rem; line-height: 1.3; margin: 0; }
+section { scroll-margin-top: 1rem; }
+section + section { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+section p { margin: .55rem 0 0; }
+footer { padding-block: 2rem; }
+@media (max-width: 48rem) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+}
